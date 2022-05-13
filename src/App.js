@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header'
+import Main from './pages/Main'
 import Card from './components/Card'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div className="App">
       <h1>Pokemon TCG</h1>
       <Header/>
-      <Card/>
+      <Main/>
     </div>
   )
 }
