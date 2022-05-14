@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+.cards-containter{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  margin: 0;
+}

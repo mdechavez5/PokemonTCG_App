@@ -1,13 +1,13 @@
-import './App.css';
+import './App.css'
 import Header from './components/Header'
-import Card from './components/Card'
+import Main from './pages/Main'
 
 function App() {
   return (
     <div className="App">
       <h1>Pokemon TCG</h1>
       <Header/>
-      <Card/>
+      <Main/>
     </div>
   )
 }

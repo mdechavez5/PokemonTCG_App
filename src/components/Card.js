@@ -1,34 +1,19 @@
-import React, {useState,useEffect} from 'react'
+import React from 'react'
 
-function Card() {
-    const [card, setCard] = useState(null)
-    const URL = 'https://api.pokemontcg.io/v2/cards/xy1-1'
-
-    const getCard = () => {
-        fetch(URL)
-        .then(response => response.json())
-        .then(result => {
-            setCard(result.data)
-        })
-    } 
-
-    useEffect(() => getCard(),[])
-
-    console.log(card)
-
+function Card(props) {
     const display = () => {
         return (
             <div className='card'>
-                <h1>{card.name}</h1>
-                <p>{card.id}</p>
-                <img src={card.images.small} alt={card.name}/>
+                <h1>{props.card.name}</h1>
+                <p>{props.card.id}</p>
+                <img src={props.card.images.small} alt={props.card.name}/>
                 <p></p>
             </div>
             )
     }
 
     return (
-        !card ? <h1>Loading...</h1> : display()
+        !props.card ? <h1>Loading...</h1> : display()
     )
 }
 
