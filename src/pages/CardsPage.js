@@ -1,19 +1,13 @@
 import React from 'react'
 import Card from '../components/Card'
-import {Link} from 'react-router-dom'
 
 function CardsPage(props) {
-
-
-
     const cards = props.cards
-    console.log('cards: ',cards)
+    // console.log('cards: ',cards)
 
     const allCards = cards.map(card => {
         return(
-            <Link key={card.id} to={`/cards/${card.id}`}>
-                <Card card={card}/>
-            </Link>
+                <Card key={card.id} card={card}/>
         )
     })
 

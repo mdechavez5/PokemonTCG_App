@@ -1,15 +1,14 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function Card(props) {
     const display = () => {
         return (
-            <div className='card'>
-                <h1>{props.card.name}</h1>
-                <p>{props.card.id}</p>
+            <Link className='card' to={`/cards/${props.card.id}`}>
+                <h1>{props.card.name} (<span>{props.card.id}</span>)</h1>
                 <img src={props.card.images.small} alt={props.card.name}/>
-                <p></p>
-            </div>
-            )
+            </Link>
+        )
     }
 
     return (
