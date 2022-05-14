@@ -1,13 +1,43 @@
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .App {
   text-align: center;
 }
 
-.cards-containter{
+.nav {
   display: flex;
+  justify-content: center;
+  background-color: grey;
+  align-items: center;
+  height: 50px;
+}
+
+.cards-container{
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
   width: 250px;
+  margin: 0;
+}
+
+.card > h1 {
+  font-size: 1rem;
   margin: 0;
 }

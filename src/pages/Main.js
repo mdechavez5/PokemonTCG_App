@@ -23,7 +23,10 @@ function Main(props) {
         })
     }
 
-    useEffect(() => getCards(),[])
+    useEffect(() => { 
+        getCards() 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     // console.log(cards.data)
 

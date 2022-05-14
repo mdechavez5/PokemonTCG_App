@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom'
 function CardPage(props) {
     const [card, setCard] = useState(null)
     const {id} = useParams()
-    console.log(id)
+    // console.log(id)
 
     const URL = `https://api.pokemontcg.io/v2/cards/${id}`
 
