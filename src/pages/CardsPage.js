@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../components/Card'
+import {Link} from 'react-router-dom'
 
 function CardsPage(props) {
 
@@ -10,7 +11,9 @@ function CardsPage(props) {
 
     const allCards = cards.map(card => {
         return(
-            <Card key={card.id} card={card}/>
+            <Link key={card.id} to={`/cards/${card.id}`}>
+                <Card card={card}/>
+            </Link>
         )
     })
 

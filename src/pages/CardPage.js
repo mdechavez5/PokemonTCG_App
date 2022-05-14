@@ -1,9 +1,13 @@
 import React, {useState,useEffect} from 'react'
 import Card from '../components/Card'
+import {useParams} from 'react-router-dom'
 
 function CardPage(props) {
     const [card, setCard] = useState(null)
-    const URL = 'https://api.pokemontcg.io/v2/cards/xy1-1'
+    const {id} = useParams()
+    console.log(id)
+
+    const URL = `https://api.pokemontcg.io/v2/cards/${id}`
 
     const getCard = () => {
         fetch(URL)
