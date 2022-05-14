@@ -25,16 +25,17 @@ function Main(props) {
 
     useEffect(() => getCards(),[])
 
-    console.log(cards)
-
+    // console.log(cards.data)
 
     return(
+
+        !cards ? <p>Loading...</p> :
         <main>
-        <Routes>
-            <Route path='/' element={<CardsPage cards={cards.data}/>}/>
-            <Route path='/cards/:id' element={<CardPage/>}/>
-        </Routes>
-    </main>
+            <Routes>
+                <Route path='/' element={<CardsPage cards={cards.data}/>}/>
+                <Route path='/cards/:id' element={<CardPage/>}/>
+            </Routes>
+        </main>
     )
 }
 
