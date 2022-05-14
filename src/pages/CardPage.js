@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Card from '../components/Card'
 
-function CardPage() {
+function CardPage(props) {
     const [card, setCard] = useState(null)
     const URL = 'https://api.pokemontcg.io/v2/cards/xy1-1'
 
@@ -15,7 +15,7 @@ function CardPage() {
 
     useEffect(() => getCard(),[])
 
-    console.log(card)
+    // console.log(card)
 
     const display = () => {
         return (
