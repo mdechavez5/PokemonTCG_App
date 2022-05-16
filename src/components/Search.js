@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import axios from 'axios'
 import CardsPage from '../pages/CardsPage'
 
 function Search(props) {
@@ -9,10 +8,8 @@ function Search(props) {
         searching: false,
     })
 
-    console.log(state.search)
-
     function handleInput (event){
-        console.log(event.target.value)
+        // console.log(event.target.value)
         setState((prevState) => ({
             ...prevState,
             query: event.target.value,
@@ -34,13 +31,10 @@ function Search(props) {
 
         const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=${queryOptions.pageSize}`
         fetch(URL)
-        .then(function (response) {
-            console.log("response: ",response.data)
-            setState((prevState) => ({
-                ...prevState,
-                searching: true,
-                search: response.data
-            }))
+        .then( (response) => response.json() )
+        .then(result => {
+            setState({search:result.data, searching:true})
+            console.log("result: ",result)
         })
         .catch(function (error) {
               console.log(error)
@@ -51,7 +45,7 @@ function Search(props) {
         <form onSubmit={searchQuery}>
             <input className="search-box" name="query" onInput={handleInput}/>
         </form>
-        {/* {state.searching ? <CardsPage cards={state.search}/> : null} */}
+        {state.searching ? <CardsPage cards={state.search}/> : null}
     </div>
     )
 }

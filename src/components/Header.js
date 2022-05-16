@@ -7,6 +7,9 @@ function Header(props) {
         <Link to='/'>
             <div>PokemonTCG App</div>
         </Link>
+        <Link to='/search'>
+            <div>Search</div>
+        </Link>
         <Link to='/signin'>
             <div>Sign In</div>
         </Link>
