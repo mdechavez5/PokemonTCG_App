@@ -28,10 +28,13 @@ function CardPage(props) {
 
     const display = () => {
         return (
-            <div className='row'>
-                <img className='show-pic' src={card.images.large} alt={card.name}/>
+            <div className='show-window row'>
+                <div className='card-window'>
+                    <img className='show-pic' src={card.images.large} alt={card.name}/>
+                </div>
                 <div className='card-details'>
                     <h1>{card.name}</h1>
+                    <p>{card.id}</p>
                     <Tcgplayer tcgplayer={card.tcgplayer}/>
                     <Cardmarket cardmarket={card.cardmarket}/>
                 </div>

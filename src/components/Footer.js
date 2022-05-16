@@ -2,9 +2,9 @@ import React from 'react'
 
 function Footer(props) {
     return (
-        <div>
+        <footer>
             <p>Powered by <a href='https://pokemontcg.io/'>Pokemon TCG API</a></p>
-        </div>
+        </footer>
     )
 }
 

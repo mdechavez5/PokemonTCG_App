@@ -8,22 +8,22 @@ function Tcgplayer(props) {
         return(
             <div key={price[0]}>
                 <p>{price[0]}</p>
-                <div className='row'>
+                <div className='tcg-table row'>
                     <div>
                         <p>Low</p>
-                        <p>{price[1].low}</p>
+                        <p>${price[1].low}</p>
                     </div>
                     <div>
                         <p>Mid</p>
-                        <p>{price[1].mid}</p>
+                        <p>${price[1].mid}</p>
                     </div>
                     <div>
                         <p>High</p>
-                        <p>{price[1].high}</p>
+                        <p>${price[1].high}</p>
                     </div>
                     <div>
                         <p>Market</p>
-                        <p>{price[1].market}</p>
+                        <p>${price[1].market}</p>
                     </div>
                 </div>
             </div>

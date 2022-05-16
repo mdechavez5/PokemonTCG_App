@@ -46,11 +46,27 @@ p {
   margin: 0;
 }
 
-.show-pic {
+.card-window {
+  display: flex;
+  justify-content: center;
+  background-color: lightgrey;
   width: 50%;
+}
+
+.show-pic {
+  width: 75%;
   object-fit: contain;
 }
 
 .card-details {
+  border: 5px inset grey;
   width: 50%;
+}
+
+.tcg-table {
+  justify-content: center;
+}
+
+.tcg-table > div {
+  width: 100px;
 }
