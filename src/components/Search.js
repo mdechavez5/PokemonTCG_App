@@ -34,7 +34,7 @@ function Search(props) {
         .then( (response) => response.json() )
         .then(result => {
             setState({search:result.data, searching:true})
-            console.log("result: ",result)
+            // console.log("result: ",result)
         })
         .catch(function (error) {
               console.log(error)
