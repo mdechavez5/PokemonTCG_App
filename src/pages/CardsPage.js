@@ -12,9 +12,12 @@ function CardsPage(props) {
     })
 
     return(
-        <div className='cards-container'>
-            {allCards}
-        </div>
+        <>
+            <h1>{props.cards[0].set.name}</h1>
+            <div className='cards-container'>
+                {allCards}
+            </div>
+        </>
     )
 }
 

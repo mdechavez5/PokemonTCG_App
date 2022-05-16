@@ -1,20 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import {Routes, Route} from 'react-router-dom'
-import CardsPage from './CardsPage'
-import CardPage from './CardPage'
+import CardsPage from '../pages/CardsPage'
+import CardPage from '../pages/CardPage'
 
 function Main(props) {
     const [cards, setCards] = useState(null)
 
     const queryOptions = {
-        q: 'name:charizard',
+        q: 'set.id:swsh8',
         // q: 'set.name:generations subtypes:mega',
         page: '1',
-        pageSize: '10',
+        pageSize: '20',
         orderBy: 'name',
     }
     
-    const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=10`
+    const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=${queryOptions.pageSize}`
 
     const getCards = () => {
         fetch(URL)

@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import Tcgplayer from '../components/Tcgplayer'
 import Cardmarket from '../components/Cardmarket'
 
@@ -30,6 +30,9 @@ function CardPage(props) {
         return (
             <div className='show-window row'>
                 <div className='card-window'>
+                    <Link to='/'>
+                        <div className='close-button'>X</div>
+                    </Link>
                     <img className='show-pic' src={card.images.large} alt={card.name}/>
                 </div>
                 <div className='card-details'>

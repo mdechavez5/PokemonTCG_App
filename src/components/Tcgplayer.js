@@ -8,7 +8,7 @@ function Tcgplayer(props) {
         return(
             <div key={price[0]}>
                 <p>{price[0]}</p>
-                <div className='tcg-table row'>
+                <div className='tcgplayer-table row'>
                     <div>
                         <p>Low</p>
                         <p>${price[1].low}</p>

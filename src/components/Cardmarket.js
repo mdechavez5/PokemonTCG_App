@@ -9,7 +9,7 @@ function Cardmarket(props) {
             <div>
                 <a href={props.cardmarket.url}>Cardmarket Prices</a>
                 <p>{props.cardmarket.updatedAt}</p>
-                <div className='column'>
+                <div className='cardmarket-table column'>
                     <div className='row'>
                         <p>Average Sell Price: </p>
                         <p>{props.cardmarket.prices.averageSellPrice}</p>
