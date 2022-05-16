@@ -41,3 +41,8 @@ a {
   font-size: 1rem;
   margin: 0;
 }
+
+.show-pic {
+  width: 50%;
+  object-fit: contain;
+}

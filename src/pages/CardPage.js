@@ -17,14 +17,18 @@ function CardPage(props) {
         })
     } 
 
-    useEffect(() => getCard(),[])
+    useEffect(() => {
+        getCard()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     // console.log(card)
 
     const display = () => {
         return (
             <>
-                <Card card={card}/>
+                {/* <Card card={card}/> */}
+                <img className='show-pic' src={card.images.large} alt={card.name}/>
             </>
             )
     }

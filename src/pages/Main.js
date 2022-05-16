@@ -6,17 +6,17 @@ import CardPage from './CardPage'
 function Main(props) {
     const [cards, setCards] = useState(null)
 
-    const URL = 'https://api.pokemontcg.io/v2/cards?q=name:gardevoir&pageSize=5'
-
     const queryOptions = {
-        q: 'name:charizard',
-        page: 1,
-        pageSize: 10,
+        q: 'set.name:generations subtypes:mega',
+        page: '1',
+        pageSize: '10',
         orderBy: 'name',
     }
+    
+    const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=10`
 
     const getCards = () => {
-        fetch(URL, {queryOptions})
+        fetch(URL)
         .then(response => response.json())
         .then(result => {
             setCards(result)
