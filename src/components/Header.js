@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 function Header(props) {
   return (
-    <nav className='nav row'>
+    <nav className='row'>
         <Link to='/'>
             <div>PokemonTCG App</div>
         </Link>
