@@ -20,6 +20,7 @@ function Main(props) {
         .then(response => response.json())
         .then(result => {
             setCards(result)
+            // console.log("API Called")
         })
     }
 

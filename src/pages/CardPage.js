@@ -1,6 +1,8 @@
 import React, {useState,useEffect} from 'react'
 import Card from '../components/Card'
 import {useParams} from 'react-router-dom'
+import Tcgplayer from '../components/Tcgplayer'
+import Cardmarket from '../components/Cardmarket'
 
 function CardPage(props) {
     const [card, setCard] = useState(null)
@@ -14,6 +16,7 @@ function CardPage(props) {
         .then(response => response.json())
         .then(result => {
             setCard(result.data)
+            // console.log("CARD API Called")
         })
     } 
 
@@ -26,10 +29,15 @@ function CardPage(props) {
 
     const display = () => {
         return (
-            <>
-                {/* <Card card={card}/> */}
+            <div className='row'>
                 <img className='show-pic' src={card.images.large} alt={card.name}/>
-            </>
+                {/* <Card card={card}/> */}
+                <div>
+                    <h1>{card.name}</h1>
+                    <Tcgplayer tcgplayer={card.tcgplayer}/>
+                    <Cardmarket cardmarket={card.cardmarket}/>
+                </div>
+            </div>
             )
     }
 
