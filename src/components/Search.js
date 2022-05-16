@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import CardsPage from '../pages/CardsPage'
+import Main from './Main'
+// import CardsPage from '../pages/CardsPage'
 
 function Search(props) {
     const [state, setState] = useState({
@@ -21,7 +22,7 @@ function Search(props) {
         event.preventDefault()
 
         const queryOptions = {
-            q: `name:${state.query}`,
+            q: `${state.query}`,
             page: 1,
             pageSize: 20,
             orderBy: 'name',
@@ -42,10 +43,11 @@ function Search(props) {
     }
     return (
     <div>
-        <form onSubmit={searchQuery}>
+        <form className='search-form' onSubmit={searchQuery}>
             <input className="search-box" name="query" onInput={handleInput}/>
         </form>
-        {state.searching ? <CardsPage cards={state.search}/> : null}
+        {/* {state.searching ? <CardsPage cards={state.search}/> : null} */}
+        {state.searching ? <Main cards={state.search}/> : null}
     </div>
     )
 }

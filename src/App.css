@@ -19,6 +19,8 @@ p {
 
 .App {
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 nav {
@@ -56,11 +58,15 @@ nav > a {
   object-fit: contain;
 }
 
+.show-window {
+  background-color: grey;
+}
+
 .card-window {
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  background-color: grey;
+  /* background-color: grey; */
   width: 50%;
 }
 
@@ -91,6 +97,9 @@ nav > a {
 }
 
 .card-details {
+  background-color: white;
+  border-top-left-radius: 20px; 
+  border-bottom-left-radius: 20px; 
   border: 5px inset grey;
   width: 50%;
 }
@@ -110,4 +119,11 @@ nav > a {
 
 .cardmarket-table > div > p {
   width: 150px;
+}
+
+.search-form > input {
+  font-size: 1.5em;
+  text-align: center;
+  height: 50px;
+  width: 400px;
 }

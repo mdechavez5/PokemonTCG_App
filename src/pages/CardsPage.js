@@ -12,12 +12,9 @@ function CardsPage(props) {
     })
 
     return(
-        <>
-            {cards[0].set.name?<h1>{cards[0].set.name}</h1> : <p></p>}
-            <div className='cards-container'>
-                {allCards}
-            </div>
-        </>
+        <div className='cards-container'>
+            {allCards}
+        </div>
     )
 }
 

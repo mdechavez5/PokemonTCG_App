@@ -37,7 +37,7 @@ function CardPage(props) {
                 </div>
                 <div className='card-details'>
                     <h1>{card.name}</h1>
-                    <p>{card.id}</p>
+                    <h3>{card.id}</h3>
                     <Tcgplayer tcgplayer={card.tcgplayer}/>
                     <Cardmarket cardmarket={card.cardmarket}/>
                 </div>
