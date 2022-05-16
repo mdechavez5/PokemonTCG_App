@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import CardsPage from '../pages/CardsPage'
 import CardPage from '../pages/CardPage'
+import Search from './Search'
 
 function Main(props) {
     const [cards, setCards] = useState(null)
@@ -38,6 +39,7 @@ function Main(props) {
         <main>
             <Routes>
                 <Route path='/' element={<CardsPage cards={cards.data}/>}/>
+                <Route path='/search' element={<Search/>}/>
                 <Route path='/cards/:id' element={<CardPage/>}/>
             </Routes>
         </main>
