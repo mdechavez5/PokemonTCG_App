@@ -7,7 +7,8 @@ function Main(props) {
     const [cards, setCards] = useState(null)
 
     const queryOptions = {
-        q: 'set.name:generations subtypes:mega',
+        q: 'name:charizard',
+        // q: 'set.name:generations subtypes:mega',
         page: '1',
         pageSize: '10',
         orderBy: 'name',
@@ -20,7 +21,7 @@ function Main(props) {
         .then(response => response.json())
         .then(result => {
             setCards(result)
-            // console.log("API Called")
+            console.log("API Called")
         })
     }
 

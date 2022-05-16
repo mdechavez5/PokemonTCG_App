@@ -46,3 +46,7 @@ a {
   width: 50%;
   object-fit: contain;
 }
+
+.card-details {
+  width: 50%;
+}

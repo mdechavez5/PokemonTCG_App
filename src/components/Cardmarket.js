@@ -2,14 +2,39 @@ import React from 'react'
 
 function Cardmarket(props) {
 
-    console.log(props)
+    // console.log(props)
 
     function display() {
         return(
             <div>
                 <a href={props.cardmarket.url}>Cardmarket Prices</a>
                 <p>{props.cardmarket.updatedAt}</p>
-                <p>{props.cardmarket.prices.averageSellPrice}</p>
+                <div className='column'>
+                    <div className='row'>
+                        <p>Average Sell Price</p>
+                        <p>{props.cardmarket.prices.averageSellPrice}</p>
+                    </div>
+                    <div className='row'>
+                        <p>Low Price</p>
+                        <p>{props.cardmarket.prices.lowPrice}</p>
+                    </div>
+                    <div className='row'>
+                        <p>trendPrice</p>
+                        <p>{props.cardmarket.prices.trendPrice}</p>
+                    </div>
+                    <div className='row'>
+                        <p>Average 1</p>
+                        <p>{props.cardmarket.prices.avg1}</p>
+                    </div>
+                    <div className='row'>
+                        <p>Average 7</p>
+                        <p>{props.cardmarket.prices.avg7}</p>
+                    </div>
+                    <div className='row'>
+                        <p>Average 30</p>
+                        <p>{props.cardmarket.prices.avg30}</p>
+                    </div>
+                </div>
             </div>
         )
     }
