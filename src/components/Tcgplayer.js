@@ -6,7 +6,7 @@ function Tcgplayer(props) {
     // console.log(keyValue)
     const prices = keyValue.map((price) => {
         return(
-            <div key={price[0]}>
+            <div key={price[0]} className='tcg-price'>
                 <p>{price[0]}</p>
                 <div className='tcgplayer-table row'>
                     <div>
@@ -34,10 +34,10 @@ function Tcgplayer(props) {
 
     function display() {
         return(
-            <div className='tcgplayer component'>
+            <div className='tcgplayer-component'>
                 <a href={props.tcgplayer.url}>Tcgplayer Prices</a>
-                {prices}
                 <p>{props.tcgplayer.updatedAt}</p>
+                {prices}
             </div>
         )
     }

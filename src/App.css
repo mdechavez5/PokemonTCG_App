@@ -43,7 +43,6 @@ nav > a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: grey;
 }
 
 .card {
@@ -71,7 +70,7 @@ nav > a {
 }
 
 .show-window {
-  background-color: grey;
+  background-color: rgba(128,128,128,.75);
 }
 
 .card-window {
@@ -85,8 +84,8 @@ nav > a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: white;
-  border: 1px solid black;
+  background-color: grey;
+  border: 1px outset grey;
   border-radius: 50%;
   position: absolute;
   margin: 10px;
@@ -96,6 +95,7 @@ nav > a {
 }
 
 .close-button:hover {
+  color: black;
   background-color: lightblue;
 }
 
@@ -114,6 +114,38 @@ nav > a {
   width: 50%;
 }
 
+.card-details > div {
+  justify-content: center;
+}
+
+.card-details > div > h3 {
+  margin: 0;
+}
+
+.card-details > div > img {
+  height: 25px;
+  object-fit: contain;
+}
+
+/* Tcgplayer Component ------------------------------------------- */
+.tcgplayer-component{
+  background-color: pink;
+  padding: 10px;
+}
+
+.tcgplayer-component > a {
+  font-weight: bold;
+}
+
+.tcg-price {
+  padding: 10px;
+}
+
+.tcg-price > p {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
 .tcgplayer-table {
   justify-content: center;
 }
@@ -122,9 +154,20 @@ nav > a {
   width: 100px;
 }
 
+/* Cardmarket Component ------------------------------------------- */
+.cardmarket-component{
+  background-color: lightblue;
+  padding: 10px;
+}
+
+.cardmarket-component > a {
+  font-weight: bold;
+}
+
 .cardmarket-table {
   justify-content: center;
   align-items: center;
+  padding: 10px 0;
 }
 
 .cardmarket-table > div > p {
@@ -134,7 +177,13 @@ nav > a {
 .search-form > input {
   font-size: 1.5em;
   text-align: center;
+  border-radius: 10px;
+  padding: 0;
   margin: 10px;
   height: 50px;
   width: 400px;
+}
+
+footer {
+  margin-top: 20px;
 }

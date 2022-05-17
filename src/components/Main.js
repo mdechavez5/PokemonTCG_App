@@ -41,7 +41,7 @@ function Main(props) {
         .then( (response) => response.json() )
         .then(result => {
             setQuery({search:result.data, searching:true})
-            console.log("result: ",result)
+            // console.log("result: ",result)
         })
 
         // const URL = `https://api.pokemontcg.io/v2/cards`
