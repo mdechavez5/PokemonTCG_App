@@ -6,7 +6,7 @@ function Cardmarket(props) {
 
     function display() {
         return(
-            <div>
+            <>
                 <a href={props.cardmarket.url}>Cardmarket Prices</a>
                 <p>{props.cardmarket.updatedAt}</p>
                 <div className='cardmarket-table column'>
@@ -35,7 +35,7 @@ function Cardmarket(props) {
                         <p>{props.cardmarket.prices.avg30}</p>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 

@@ -6,7 +6,7 @@ import Cardmarket from '../components/Cardmarket'
 function CardPage(props) {
     const [card, setCard] = useState(null)
     const {id} = useParams()
-    // console.log(id)
+    console.log("useParams id: ",id) 
 
     const URL = `https://api.pokemontcg.io/v2/cards/${id}`
 
