@@ -2,8 +2,6 @@ import React from 'react'
 
 function Cardmarket(props) {
 
-    // console.log(props)
-
     function display() {
         return(
             <div className='cardmarket-component'>
