@@ -51,8 +51,16 @@ nav > a {
   width: 200px;
   margin: 0;
 }
+.card:hover{
+  transform: scale(1.05);
+}
 
 .card > h1 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.card > h2 {
   font-size: 1rem;
   margin: 0;
 }

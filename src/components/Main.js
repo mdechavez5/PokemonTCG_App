@@ -1,53 +1,67 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import CardsPage from '../pages/CardsPage'
 import CardPage from '../pages/CardPage'
 import Search from './Search'
 
 function Main(props) {
-    const cards = props.cards
-    console.log("Main cards:",cards)
 
-    // const queryOptions = {
-    //     q: 'set.id:swsh8',
-    //     // q: 'set.name:generations subtypes:mega',
-    //     page: '1',
-    //     pageSize: '20',
-    //     orderBy: 'name',
-    // }
-    
-    // const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=${queryOptions.pageSize}`
+    const [state, setState] = useState({
+        q: 'set.id:swsh9',
+        search: null,
+        searching: false,
+    })
 
-    // const getCards = () => {
-    //     fetch(URL)
-    //     .then(response => response.json())
-    //     .then(result => {
-    //         setCards(result)
-    //         console.log("API Called")
-    //     })
-    // }
+    function handleInput (event){
+        // console.log(event.target.value)
+        setState((prevState) => ({
+            ...prevState,
+            q: event.target.value,
+            searching: false,
+        }))
+    }
 
-    // useEffect(() => { 
-    //     getCards() 
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // },[])
+    function searchQuery(event){
+        event.preventDefault()
+        // console.log(state.q)
+        const queryOptions = {
+            q: `${state.q}`,
+            page: 1,
+            pageSize: 10,
+            orderBy: 'name',
+        }
 
-    // console.log(cards.data)
+        // console.log("queryOptions.q: ",queryOptions.q)
 
-    // ------------------------------------------------------------
+        const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=${queryOptions.pageSize}`
+        fetch(URL)
+        .then( (response) => response.json() )
+        .then(result => {
+            setState({search:result.data, searching:true})
+            // console.log("result: ",result)
+        })
+        // const URL = `https://api.pokemontcg.io/v2/cards`
+        // axios.get(URL,{params})
+        // .then( (response) => {
+        //     console.log(response) 
+        //     setState({search: response.data.data, searching:true})
+        // })
+        .catch(function (error) {
+              console.log(error)
+        })
+    }
 
     return(
-
-        // !cards ? <p>Loading...</p> :
-        <main>
-            <Routes>
-                {/* <Route path='/' element={<CardsPage cards={cards.data}/>}/> */}
-                <Route path='/' element={<CardsPage cards={cards}/>}/>
-                {/* <Route path='/' element={<CardsPage/>}/> */}
-                <Route path='/search' element={<Search/>}/>
-                <Route path='/cards/:id' element={<CardPage/>}/>
-            </Routes>
-        </main>
+        <>
+            <Search handleInput={handleInput} searchQuery={searchQuery}/>
+            <main>
+                <Routes>
+                    <Route path='/' element={state.search ? <CardsPage cards={state.search}/> : <p>Loading</p>  }/>
+                    <Route path='/?query=:query' element={<CardPage cards={state.search}/>}/>
+                    <Route path='/cards/:id' element={<CardPage/>}/>
+                </Routes>
+            </main>
+        </>
     )
 }
 
