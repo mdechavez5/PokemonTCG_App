@@ -3,17 +3,23 @@ import Card from '../components/Card'
 
 function CardsPage(props) {
     const cards = props.cards
-    // console.log('cards: ',cards)
+    console.log('CardsPage cards: ',cards)
 
-    const allCards = cards.map(card => {
-        return(
-                <Card key={card.id} card={card}/>
-        )
-    })
+
+    function display(){
+
+        const allCards = cards.map(card => {
+            return(
+                    <Card key={card.id} card={card}/>
+            )
+        })
+    }
 
     return(
+
+        // !cards ? null :
         <div className='cards-container'>
-            {allCards}
+             {cards ? display() : <p>Loading</p>}
         </div>
     )
 }

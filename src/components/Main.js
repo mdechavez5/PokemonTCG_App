@@ -5,10 +5,8 @@ import CardPage from '../pages/CardPage'
 import Search from './Search'
 
 function Main(props) {
-    // const [cards, setCards] = useState(null)
-    // const [cards, setCards] = useState(props.cards)
     const cards = props.cards
-    // console.log(cards)
+    console.log("Main cards:",cards)
 
     // const queryOptions = {
     //     q: 'set.id:swsh8',
@@ -36,13 +34,16 @@ function Main(props) {
 
     // console.log(cards.data)
 
+    // ------------------------------------------------------------
+
     return(
 
-        !cards ? <p>Loading...</p> :
+        // !cards ? <p>Loading...</p> :
         <main>
             <Routes>
                 {/* <Route path='/' element={<CardsPage cards={cards.data}/>}/> */}
                 <Route path='/' element={<CardsPage cards={cards}/>}/>
+                {/* <Route path='/' element={<CardsPage/>}/> */}
                 <Route path='/search' element={<Search/>}/>
                 <Route path='/cards/:id' element={<CardPage/>}/>
             </Routes>
