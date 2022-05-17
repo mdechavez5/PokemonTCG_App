@@ -2,13 +2,12 @@ import React, {useState, useEffect} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import HomePage from '../pages/HomePage'
 import CardsPage from '../pages/CardsPage'
 import CardPage from '../pages/CardPage'
 import Search from './Search'
 
 function Main(props) {
-    // const {queryParams} = useParams()
-    // console.log(queryParams)
 
     const [query, setQuery] = useState({
         q: 'name:charmander',
@@ -33,8 +32,6 @@ function Main(props) {
             pageSize: 10,
             orderBy: 'name',
         }
-
-        // console.log("queryOptions.q: ",JSON.stringify(queryOptions))
 
         const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=${queryOptions.pageSize}`
         fetch(URL)
@@ -64,10 +61,8 @@ function Main(props) {
             <Search handleInput={handleInput} searchQuery={searchQuery}/>
             <main>
                 <Routes>
-                    <Route path='/' element={query.search ? <CardsPage cards={query.search}/> : <h1>Home Page</h1>  }/>
+                    <Route path='/' element={query.search ? <CardsPage cards={query.search}/> : <HomePage/> }/>
                     <Route path='/cards/:id' element={<CardPage/>}/>
-                    {/* <Route path='/?q=:query' element={query.search ? <CardsPage cards={query.search}/> : <p>Loading</p> }/> */}
-                    {/* <Route path='/sets/:id' element={<SetPage/>}/> */}
                 </Routes>
             </main>
         </>
