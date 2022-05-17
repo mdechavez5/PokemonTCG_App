@@ -6,7 +6,7 @@ import Cardmarket from '../components/Cardmarket'
 function CardPage(props) {
     const [card, setCard] = useState(null)
     const {id} = useParams()
-    console.log("useParams id: ",id) 
+    // console.log("useParams id: ",id)
 
     const URL = `https://api.pokemontcg.io/v2/cards/${id}`
 
@@ -35,7 +35,10 @@ function CardPage(props) {
                 </div>
                 <div className='card-details'>
                     <h1>{card.name}</h1>
-                    <h3>{card.id}</h3>
+                    <div className='row'>
+                        <img src={card.set.images.logo} alt={card.set.name}/>
+                        <h3>{card.id}</h3>
+                    </div>
                     {card.tcgplayer ? <Tcgplayer tcgplayer={card.tcgplayer}/> : <p>No tcgplayer info available.</p> }
                     {card.cardmarket ? <Cardmarket cardmarket={card.cardmarket}/> : <p>No cardmarket info available.</p> }
                 </div>
