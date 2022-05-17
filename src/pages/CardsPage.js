@@ -2,12 +2,6 @@ import React from 'react'
 import Card from '../components/Card'
 
 function CardsPage(props) {
-    
-
-
-
-
-
 
     const cards = props.cards
 

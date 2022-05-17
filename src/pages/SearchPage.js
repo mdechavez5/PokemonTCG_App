@@ -5,7 +5,6 @@ function SearchPage(props) {
     const {id} = useParams()
     console.log(id)
 
-
     return (
         <div>SearchPage</div>
     )

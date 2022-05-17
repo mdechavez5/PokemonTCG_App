@@ -24,8 +24,6 @@ function CardPage(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
-    // console.log(card)
-
     const display = () => {
         return (
             <div className='show-window row'>

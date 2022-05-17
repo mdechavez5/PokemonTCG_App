@@ -77,8 +77,6 @@ nav > a {
 .card-window {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  /* background-color: grey; */
   width: 50%;
 }
 
