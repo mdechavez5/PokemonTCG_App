@@ -66,7 +66,7 @@ function Main(props) {
                 <Routes>
                     <Route path='/' element={query.search ? <CardsPage cards={query.search}/> : <h1>Home Page</h1>  }/>
                     <Route path='/cards/:id' element={<CardPage/>}/>
-                    <Route path='/?q=:query' element={query.search ? <CardsPage cards={query.search}/> : <p>Loading</p> }/>
+                    {/* <Route path='/?q=:query' element={query.search ? <CardsPage cards={query.search}/> : <p>Loading</p> }/> */}
                     {/* <Route path='/sets/:id' element={<SetPage/>}/> */}
                 </Routes>
             </main>
