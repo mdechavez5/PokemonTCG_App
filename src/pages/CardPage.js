@@ -38,11 +38,11 @@ function CardPage(props) {
                 <div className='card-details'>
                     <h1>{card.name}</h1>
                     <h3>{card.id}</h3>
-                    <Tcgplayer tcgplayer={card.tcgplayer}/>
-                    <Cardmarket cardmarket={card.cardmarket}/>
+                    {card.tcgplayer ? <Tcgplayer tcgplayer={card.tcgplayer}/> : <p>No tcgplayer info available.</p> }
+                    {card.cardmarket ? <Cardmarket cardmarket={card.cardmarket}/> : <p>No cardmarket info available.</p> }
                 </div>
             </div>
-            )
+        )
     }
 
     return (

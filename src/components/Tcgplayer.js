@@ -34,10 +34,10 @@ function Tcgplayer(props) {
 
     function display() {
         return(
-            <div>
+            <div className='tcgplayer component'>
                 <a href={props.tcgplayer.url}>Tcgplayer Prices</a>
-                <p>{props.tcgplayer.updatedAt}</p>
                 {prices}
+                <p>{props.tcgplayer.updatedAt}</p>
             </div>
         )
     }

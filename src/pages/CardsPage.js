@@ -2,15 +2,20 @@ import React from 'react'
 import Card from '../components/Card'
 
 function CardsPage(props) {
+    
+
+
+
+
+
+
     const cards = props.cards
-    // console.log('CardsPage cards: ',cards)
 
-
-        const allCards = cards.map(card => {
-            return(
-                    <Card key={card.id} card={card}/>
-            )
-        })
+    const allCards = cards.map(card => {
+        return(
+            <Card key={card.id} card={card}/>
+        )
+    })
 
     return(
 

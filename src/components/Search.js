@@ -4,7 +4,7 @@ function Search(props) {
     return (
     <div>
         <form className='search-form' onSubmit={props.searchQuery}>
-            <input className="search-box" name="query" onInput={props.handleInput}/>
+            <input className="search-box" name="q" onInput={props.handleInput}/>
         </form>
     </div>
     )
