@@ -12,7 +12,7 @@ function Main(props) {
 
     const [query, setQuery] = useState({
         query: {
-            q: ``,
+            q: `name:pikachu`,
             page: 1,
             pageSize: 40,
             orderBy: 'name'
