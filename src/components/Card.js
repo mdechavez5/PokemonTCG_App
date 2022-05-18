@@ -7,6 +7,7 @@ function Card(props) {
             <Link className='card' to={`/cards/${props.card.id}`}>
                 <h1>{props.card.name}</h1>
                 <h2>{props.card.id}</h2>
+                <p>{props.card.set.name}</p>
                 <img src={props.card.images.small} alt={props.card.name}/>
             </Link>
         )
