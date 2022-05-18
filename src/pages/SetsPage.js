@@ -1,13 +1,44 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
+import CardsPage from './CardsPage'
 
 function SetsPage(props) {
     const {id} = useParams()
-    console.log(id)
+    console.log("set/:id ",id)
+
+    const [set, setSet] = useState(id)
+    const [result, setResult] = useState(null)
+
+    function searchSet(event){
+        setSet(id)
+        const queryOptions = {
+            q: `set.id:${set}`,
+            page: 1,
+            pageSize: 40,
+            orderBy: 'name',
+        }
+
+        const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=${queryOptions.pageSize}`
+        fetch(URL)
+        .then( (response) => response.json() )
+        .then(result => {
+            // console.log(result.data)
+            setResult(result.data)
+        })
+        .catch(function (error) {
+              console.log(error)
+        })
+    }
+
+    useEffect(() => {
+        searchSet()
+    }, [])
 
     function display() {
         return(
-            <p>Display Cards</p>
+            <>
+                {!result ? <p>Loading</p> : <CardsPage cards={result}/>}
+            </>
         )
     }
 
