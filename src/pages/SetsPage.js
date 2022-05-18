@@ -7,7 +7,10 @@ function SetsPage(props) {
     console.log("set/:id ",id)
 
     const [set, setSet] = useState(id)
+    console.log("set set",set)
     const [result, setResult] = useState(null)
+
+    // setSet(id)
 
     function searchSet(event){
         setSet(id)
