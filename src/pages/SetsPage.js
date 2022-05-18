@@ -4,18 +4,12 @@ import CardsPage from './CardsPage'
 
 function SetsPage(props) {
     const {id} = useParams()
-    console.log("set/:id ",id)
-
-    const [set, setSet] = useState(id)
-    console.log("set set",set)
+    // console.log("set/:id ",id)
     const [result, setResult] = useState(null)
 
-    // setSet(id)
-
     function searchSet(event){
-        setSet(id)
         const queryOptions = {
-            q: `set.id:${set}`,
+            q: `set.id:${id}`,
             page: 1,
             pageSize: 40,
             orderBy: 'name',
@@ -36,6 +30,8 @@ function SetsPage(props) {
     useEffect(() => {
         searchSet()
     }, [])
+
+    // console.log(result)
 
     function display() {
         return(
