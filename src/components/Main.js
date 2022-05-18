@@ -7,6 +7,7 @@ import CardsPage from '../pages/CardsPage'
 import CardPage from '../pages/CardPage'
 import Search from './Search'
 import NotFoundPage from '../pages/NotFoundPage'
+import SetsPage from '../pages/SetsPage'
 
 function Main(props) {
 
@@ -66,6 +67,9 @@ function Main(props) {
                 <Routes>
                     <Route path='/' element={query.search ? <CardsPage cards={query.search}/> : <HomePage/> }/>
                     <Route path='/cards/:id' element={<CardPage/>}/>
+                    <Route path='/sets' element={<SetsPage/>}>
+                        <Route path='/sets/:id' element={<SetsPage/>}/>
+                    </Route>
                     <Route path='*' element={<NotFoundPage/>} />
                 </Routes>
             </main>
