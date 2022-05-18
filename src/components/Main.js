@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
 import HomePage from '../pages/HomePage'
 import CardsPage from '../pages/CardsPage'
 import CardPage from '../pages/CardPage'
@@ -12,7 +11,12 @@ import SetsPage from '../pages/SetsPage'
 function Main(props) {
 
     const [query, setQuery] = useState({
-        q: 'set.id:swsh9',
+        query: {
+            q: ``,
+            page: 1,
+            pageSize: 40,
+            orderBy: 'name'
+        },
         search: null,
         searching: false,
     })
@@ -21,21 +25,19 @@ function Main(props) {
         // console.log(event.target.value)
         setQuery((prevQuery) => ({
             ...prevQuery,
-            q: event.target.value,
+            query: {
+                q: event.target.value,
+                page: 1,
+                pageSize: 40,
+                orderBy: 'name'
+            },
             searching: false,
         }))
     }
 
     function searchQuery(event){
         event.preventDefault()
-        const queryOptions = {
-            q: `${query.q}`,
-            page: 1,
-            pageSize: 40,
-            orderBy: 'name',
-        }
-
-        const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=${queryOptions.pageSize}`
+        const URL = `https://api.pokemontcg.io/v2/cards?q=${query.query.q}&pageSize=${query.query.pageSize}`
         fetch(URL)
         .then( (response) => response.json() )
         .then(result => {
@@ -47,13 +49,6 @@ function Main(props) {
         .catch(function (error) {
               console.log(error)
         })
-
-        // const URL = `https://api.pokemontcg.io/v2/cards`
-        // axios.get(URL,{queryOptions})
-        // .then( (response) => {
-        //     console.log(response.data.data) 
-        //     setQuery({search: response.data.data, searching:true})
-        // })
     }
 
     // useEffect(() => {
@@ -68,7 +63,8 @@ function Main(props) {
                     <Route path='/' element={query.search ? <CardsPage cards={query.search}/> : <HomePage/> }/>
                     <Route path='/cards/:id' element={<CardPage/>}/>
                     <Route path='/sets' element={<SetsPage/>}>
-                        <Route path='/sets/:id' element={<SetsPage/>}/>
+                        {/* <Route path='/sets/:id' element={<SetsPage/>}/> */}
+                        <Route path='/sets/:id' element={<CardsPage cards={query.search}/>}/>
                     </Route>
                     <Route path='*' element={<NotFoundPage/>} />
                 </Routes>
