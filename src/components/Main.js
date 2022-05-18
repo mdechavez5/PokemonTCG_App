@@ -6,11 +6,12 @@ import HomePage from '../pages/HomePage'
 import CardsPage from '../pages/CardsPage'
 import CardPage from '../pages/CardPage'
 import Search from './Search'
+import NotFoundPage from '../pages/NotFoundPage'
 
 function Main(props) {
 
     const [query, setQuery] = useState({
-        q: 'name:charmander',
+        q: 'set.id:swsh9',
         search: null,
         searching: false,
     })
@@ -29,7 +30,7 @@ function Main(props) {
         const queryOptions = {
             q: `${query.q}`,
             page: 1,
-            pageSize: 10,
+            pageSize: 40,
             orderBy: 'name',
         }
 
@@ -37,8 +38,13 @@ function Main(props) {
         fetch(URL)
         .then( (response) => response.json() )
         .then(result => {
-            setQuery({search:result.data, searching:true})
+            setQuery({
+                search:result.data, searching:true
+            })
             // console.log("result: ",result)
+        })
+        .catch(function (error) {
+              console.log(error)
         })
 
         // const URL = `https://api.pokemontcg.io/v2/cards`
@@ -46,9 +52,6 @@ function Main(props) {
         // .then( (response) => {
         //     console.log(response.data.data) 
         //     setQuery({search: response.data.data, searching:true})
-        // })
-        // .catch(function (error) {
-        //       console.log(error)
         // })
     }
 
@@ -63,6 +66,7 @@ function Main(props) {
                 <Routes>
                     <Route path='/' element={query.search ? <CardsPage cards={query.search}/> : <HomePage/> }/>
                     <Route path='/cards/:id' element={<CardPage/>}/>
+                    <Route path='*' element={<NotFoundPage/>} />
                 </Routes>
             </main>
         </>
