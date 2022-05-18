@@ -12,6 +12,10 @@ p {
   margin: 0;
 }
 
+li {
+  list-style: none;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -39,6 +43,18 @@ nav > a {
   width: 150px;
 }
 
+/* Set List Component ------------------------------------------- */
+.set-list{
+  display: flex;
+  justify-content: center;
+}
+
+.set-list > a {
+  width: 100px;
+  margin: 0;
+}
+
+/* Card Index Page ------------------------------------------- */
 .cards-container{
   display: flex;
   flex-direction: row;
@@ -70,6 +86,7 @@ nav > a {
   object-fit: contain;
 }
 
+/* Card Show Page ------------------------------------------- */
 .show-window {
   background-color: rgba(128,128,128,.75);
 }
