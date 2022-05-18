@@ -4,9 +4,10 @@ import {Link} from 'react-router-dom'
 function SetList() {
     return (
         <section className='set-list column'>
-            <Link to='/set/swsh9'>Brilliant Stars</Link>
-            <Link to='/set/swsh8'>Fusion Strike</Link>
-            <Link to='/set/swsh7'>Evolving Skies</Link>
+            <Link to='/sets'>Sets</Link>
+            <Link to='/sets/swsh9'>Brilliant Stars</Link>
+            <Link to='/sets/swsh8'>Fusion Strike</Link>
+            <Link to='/sets/swsh7'>Evolving Skies</Link>
         </section>
     )
 }
