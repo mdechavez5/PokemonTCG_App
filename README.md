@@ -1,9 +1,23 @@
 # Pokemon TCG App
-Users can search and view all Pokemon TCG Cards using [Pokemon TCG API](https://dev.pokemontcg.io/). Users can sign-up to build their own decks, create lists of their rarest cards, and create a cards wishlist.
+Browser application that welcomes Pokemon TCG collectors and enthusiasts. Users can search and view all Pokemon TCG Cards using [Pokemon TCG API](https://dev.pokemontcg.io/). Application based on REACT, working with a third-party API to find and deliver product information.
 
+## Technologies Used
+HTML | CSS | JavaScript | REACT | [Pokemon TCG API](https://pokemontcg.io/)
 
-## Link to the API to used
-> [Pokemon TCG API link](https://pokemontcg.io/)
+## Getting Started
+- Application Usage:
+     - Navigate to [deployed app](https://pokemontcg-app.herokuapp.com/)
+     - Search For Cards
+          - Searching by name -> "name:..."
+          - Searching by set -> "set.id:..."
+          - Searching by type -> "types:..."
+- Contributor Usage:
+     - Fork & Clone Repository
+     - Install Dependencies (npm i)
+     - Create Development Branch
+     - Submit Issue or Pull Request
+          - If you identify bugs, submit an issue on the Git repo. Please detail the bug in your issue. 
+          - If you know how to fix it, feel free to note the methods you would use. You could also submit a pull request with suggested code to fix it.
 
 ## Example data response from API
 ```json
@@ -130,7 +144,12 @@ Users can search and view all Pokemon TCG Cards using [Pokemon TCG API](https://
 ![PokemonTCG App](https://user-images.githubusercontent.com/101363667/168511402-edee5d29-b1ec-4b2b-bd10-a710b1e9c54f.jpeg)
 
 ## Wire Frames
-<img width="605" alt="Screen Shot 2022-05-15 at 10 48 14 PM" src="https://user-images.githubusercontent.com/101363667/168511641-a6eee964-b494-443e-89e0-8de377b77d76.png">
+<img src ="https://user-images.githubusercontent.com/101363667/169394543-a30387c5-f0ca-482e-a629-92ba178efc82.png" alt="Wireframe">
+<img src="https://user-images.githubusercontent.com/101363667/169392219-a308f24f-dc45-44b5-a9aa-39343133bb37.png" alt="Home Page">
+<img src="https://user-images.githubusercontent.com/101363667/169392598-49f11e7e-26fb-4e28-bd41-fc286f577435.png" alt="Charizard Search Page">
+<img src="https://user-images.githubusercontent.com/101363667/169392644-32513a6e-d7c0-449b-81bc-6409b2025abc.png" alt="Charizard Card Page">
+<img src="https://user-images.githubusercontent.com/101363667/169397527-00c43741-6aa3-4194-8207-bae217c85410.png" alt="Set Index Page"
+
 
 ## User Stories
 >  _As a User, I want search for cards, so that I could find a specific card_
