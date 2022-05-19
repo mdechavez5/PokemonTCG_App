@@ -3,7 +3,7 @@ import React from 'react'
 function Tcgplayer(props) {
 
     const keyValue = Object.entries(props.tcgplayer.prices)
-    // console.log(keyValue)
+
     const prices = keyValue.map((price) => {
         return(
             <div key={price[0]} className='tcg-price'>
@@ -29,8 +29,6 @@ function Tcgplayer(props) {
             </div>
         )
     })
-
-    // console.log(props)
 
     function display() {
         return(
