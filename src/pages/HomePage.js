@@ -5,11 +5,11 @@ function HomePage(props) {
         <div>
             <h1>Welcome</h1>
             <h2>Search for Pokemon Cards by name, set, type, etc.</h2>
-            <p>When searching must search with a prefix: </p>
+            <p>Must search with a prefix: </p>
             <ul>
-                <li>name:-</li>
-                <li>set.id:-</li>
-                <li>types:-</li>
+                <li>name:-     (i.e. name:charizard)</li>
+                <li>set.id:-     (i.e. set.id:swsh9)</li>
+                <li>types:-     (i.e. set.id:swsh9)</li>
             </ul>
         </div>
     )

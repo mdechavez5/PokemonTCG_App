@@ -21,15 +21,15 @@ function Cardmarket(props) {
                         <p>${props.cardmarket.prices.trendPrice}</p>
                     </div>
                     <div className='row'>
-                        <p>Average 1: </p>
+                        <p>Average 1 Day: </p>
                         <p>${props.cardmarket.prices.avg1}</p>
                     </div>
                     <div className='row'>
-                        <p>Average 7: </p>
+                        <p>Average 7 Days: </p>
                         <p>${props.cardmarket.prices.avg7}</p>
                     </div>
                     <div className='row'>
-                        <p>Average 30: </p>
+                        <p>Average 30 Days: </p>
                         <p>${props.cardmarket.prices.avg30}</p>
                     </div>
                 </div>

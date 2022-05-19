@@ -36,7 +36,7 @@ function Tcgplayer(props) {
         return(
             <div className='tcgplayer-component'>
                 <a href={props.tcgplayer.url}>Tcgplayer Prices</a>
-                <p>{props.tcgplayer.updatedAt}</p>
+                <p>Updated at {props.tcgplayer.updatedAt}</p>
                 {prices}
             </div>
         )
