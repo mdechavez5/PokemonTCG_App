@@ -5,7 +5,6 @@ import CardsPage from './CardsPage'
 function SetsCards(props) {
     const [result, setResult] = useState(null)
     const {id} = useParams()
-    // console.log("set/:id ",id)
     const queryOptions = {
         q: `set.id:${id}`,
         page: 1,
@@ -19,7 +18,6 @@ function SetsCards(props) {
         fetch(URL)
         .then( (response) => response.json() )
         .then(result => {
-            // console.log(result.data)
             setResult(result.data)
         })
         .catch(function (error) {
@@ -31,8 +29,6 @@ function SetsCards(props) {
         searchSet()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
-    // console.log(result)
 
     function displayCards() {
         return(

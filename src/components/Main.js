@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Routes, Route} from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 import CardsPage from '../pages/CardsPage'
@@ -9,6 +9,7 @@ import SetsCards from '../pages/SetsCards'
 
 function Main(props) {
 
+    // Set Default State
     const [query, setQuery] = useState({
         query: {
             q: `name:pikachu`,
@@ -20,8 +21,8 @@ function Main(props) {
         searching: false,
     })
 
+    // Handling Input from Searchbar
     function handleInput (event){
-        // console.log(event.target.value)
         setQuery((prevQuery) => ({
             ...prevQuery,
             query: {
@@ -34,6 +35,7 @@ function Main(props) {
         }))
     }
 
+    // Handles When User Submits Query
     function searchQuery(event){
         event.preventDefault()
         const URL = `https://api.pokemontcg.io/v2/cards?q=${query.query.q}&pageSize=${query.query.pageSize}`
@@ -45,16 +47,11 @@ function Main(props) {
                 search:result.data, 
                 searching:true
             })
-            // console.log("result: ",result)
         })
         .catch(function (error) {
               console.log(error)
         })
     }
-
-    // useEffect(() => {
-    //     searchQuery()
-    // }, [])
 
     return(
         <>
