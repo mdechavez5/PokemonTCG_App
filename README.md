@@ -14,6 +14,7 @@ HTML | CSS | JavaScript | REACT | [Pokemon TCG API](https://pokemontcg.io/)
 - Contributor Usage:
      - Fork & Clone Repository
      - Install Dependencies (npm i)
+     - Create Development Branch
      - Submit Issue or Pull Request
           - If you identify bugs, submit an issue on the Git repo. Please detail the bug in your issue. 
           - If you know how to fix it, feel free to note the methods you would use. You could also submit a pull request with suggested code to fix it.
