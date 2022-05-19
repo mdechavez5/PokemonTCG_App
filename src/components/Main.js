@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import {Routes, Route} from 'react-router-dom'
-import { useParams } from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 import CardsPage from '../pages/CardsPage'
 import CardPage from '../pages/CardPage'
 import Search from './Search'
 import NotFoundPage from '../pages/NotFoundPage'
-import SetsPage from '../pages/SetsPage'
+import SetsCards from '../pages/SetsCards'
 
 function Main(props) {
 
@@ -60,11 +59,10 @@ function Main(props) {
             <Search handleInput={handleInput} searchQuery={searchQuery}/>
             <main>
                 <Routes>
-                    <Route path='/' element={query.search ? <CardsPage cards={query.search}/> : <HomePage/> }/>
+                    <Route path='/' element={!query.search ? <HomePage/> : <CardsPage cards={query.search}/> }/>
                     <Route path='/cards/:id' element={<CardPage/>}/>
-                    <Route path='/sets' element={<SetsPage/>}>
-                        {/* <Route path='/sets/:id' element={<SetsPage/>}/> */}
-                        <Route path='/sets/:id' element={<CardsPage cards={query.search}/>}/>
+                    <Route path='/sets' element={<SetsCards/>}>
+                        <Route path='/sets/:id' element={<SetsCards/>}/>
                     </Route>
                     <Route path='*' element={<NotFoundPage/>} />
                 </Routes>
