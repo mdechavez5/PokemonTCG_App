@@ -148,7 +148,7 @@ HTML | CSS | JavaScript | REACT | [Pokemon TCG API](https://pokemontcg.io/)
 <img src="https://user-images.githubusercontent.com/101363667/169392219-a308f24f-dc45-44b5-a9aa-39343133bb37.png" alt="Home Page">
 <img src="https://user-images.githubusercontent.com/101363667/169392598-49f11e7e-26fb-4e28-bd41-fc286f577435.png" alt="Charizard Search Page">
 <img src="https://user-images.githubusercontent.com/101363667/169392644-32513a6e-d7c0-449b-81bc-6409b2025abc.png" alt="Charizard Card Page">
-<img src="https://user-images.githubusercontent.com/101363667/169392666-42cb3a1e-ce50-4b86-a58a-0fa7c5ac5806.png" alt="SWSH9 Set Index Page">
+<img src="https://user-images.githubusercontent.com/101363667/169397527-00c43741-6aa3-4194-8207-bae217c85410.png" alt="Set Index Page"
 
 
 ## User Stories
