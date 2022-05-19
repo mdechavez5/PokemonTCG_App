@@ -41,7 +41,9 @@ function Main(props) {
         .then( (response) => response.json() )
         .then(result => {
             setQuery({
-                search:result.data, searching:true
+                ...query,
+                search:result.data, 
+                searching:true
             })
             // console.log("result: ",result)
         })
