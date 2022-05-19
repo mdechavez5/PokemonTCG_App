@@ -3,19 +3,19 @@ import {useParams} from 'react-router-dom'
 import CardsPage from './CardsPage'
 
 function SetsCards(props) {
+    const [result, setResult] = useState(null)
     const {id} = useParams()
     // console.log("set/:id ",id)
-    const [result, setResult] = useState(null)
-
+    const queryOptions = {
+        q: `set.id:${id}`,
+        page: 1,
+        pageSize: 40,
+        orderBy: 'name',
+    }
+    
+    const URL = `https://api.pokemontcg.io/v2/cards?q=set.id:${id}&pageSize=${queryOptions.pageSize}`
+    
     function searchSet(event){
-        const queryOptions = {
-            q: `set.id:${id}`,
-            page: 1,
-            pageSize: 40,
-            orderBy: 'name',
-        }
-
-        const URL = `https://api.pokemontcg.io/v2/cards?q=${queryOptions.q}&pageSize=${queryOptions.pageSize}`
         fetch(URL)
         .then( (response) => response.json() )
         .then(result => {
