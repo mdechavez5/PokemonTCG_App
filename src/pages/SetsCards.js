@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import CardsPage from './CardsPage'
 
-function SetsPage(props) {
+function SetsCards(props) {
     const {id} = useParams()
     // console.log("set/:id ",id)
     const [result, setResult] = useState(null)
@@ -29,13 +29,15 @@ function SetsPage(props) {
 
     useEffect(() => {
         searchSet()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // console.log(result)
 
-    function display() {
+    function displayCards() {
         return(
             <>
+                {!result ? <h1>{id}</h1> : <h1>{result[0].set.name}</h1>}
                 {!result ? <p>Loading</p> : <CardsPage cards={result}/>}
             </>
         )
@@ -43,9 +45,9 @@ function SetsPage(props) {
 
     return (
         <>
-            {!id ? <div>SetsPage</div> : display()}
+            {!id ? <div>SetsPage</div> : displayCards()}
         </>
     )
 }
 
-export default SetsPage
+export default SetsCards
