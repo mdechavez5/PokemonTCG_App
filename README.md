@@ -146,7 +146,7 @@ HTML | CSS | JavaScript | REACT | [Pokemon TCG API](https://pokemontcg.io/)
 ## Wire Frames
 <img src ="https://user-images.githubusercontent.com/101363667/169394543-a30387c5-f0ca-482e-a629-92ba178efc82.png" alt="Wireframe">
 <img src="https://user-images.githubusercontent.com/101363667/169392219-a308f24f-dc45-44b5-a9aa-39343133bb37.png" alt="Home Page">
-<img src="https://user-images.githubusercontent.com/101363667/169392598-49f11e7e-26fb-4e28-bd41-fc286f577435.png" alt="Charizard Search Page">
+<img width="972" alt="Screen Shot 2022-06-23 at 7 44 30 PM" src="https://user-images.githubusercontent.com/101363667/175432658-d075481c-dbc3-48d6-aaf6-2f8e094cb877.png">
 <img src="https://user-images.githubusercontent.com/101363667/169392644-32513a6e-d7c0-449b-81bc-6409b2025abc.png" alt="Charizard Card Page">
 <img src="https://user-images.githubusercontent.com/101363667/169397527-00c43741-6aa3-4194-8207-bae217c85410.png" alt="Set Index Page"
 
