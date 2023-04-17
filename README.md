@@ -6,7 +6,7 @@ HTML | CSS | JavaScript | REACT | [Pokemon TCG API](https://pokemontcg.io/)
 
 ## Getting Started
 - Application Usage:
-     - Navigate to [deployed app](https://pokemontcg-app.herokuapp.com/)
+     - Navigate to [deployed app](https://mdpokemontcgapp.netlify.app/)
      - Search For Cards
           - Searching by name -> "name:..."
           - Searching by set -> "set.id:..."
